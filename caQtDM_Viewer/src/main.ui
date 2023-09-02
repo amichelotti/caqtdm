@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>493</width>
+    <height>144</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>493</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="title">
+     <string>&amp;Menu</string>
+    </property>
+    <addaction name="fileAction"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="reloadAction"/>
+    <addaction name="exitAction"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuPV">
+    <property name="title">
+     <string>&amp;PV</string>
+    </property>
+    <addaction name="unconnectedAction"/>
+   </widget>
+   <widget class="QMenu" name="menuUpdateType">
+    <property name="title">
+     <string>&amp;UpdateType</string>
+    </property>
+    <addaction name="directAction"/>
+    <addaction name="timedAction"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="helpAction"/>
+    <addaction name="aboutAction"/>
+   </widget>
+   <widget class="QMenu" name="menuHttp">
+    <property name="title">
+     <string>Http</string>
+    </property>
+    <addaction name="emptycacheAction"/>
+    <addaction name="displayUrl"/>
+   </widget>
+   <addaction name="menuMenu"/>
+   <addaction name="menuPV"/>
+   <addaction name="menuUpdateType"/>
+   <addaction name="menuHelp"/>
+   <addaction name="menuHttp"/>
+  </widget>
+  <action name="exitAction">
+   <property name="text">
+    <string>&amp;Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="reloadAction">
+   <property name="text">
+    <string>&amp;Reload All</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+R</string>
+   </property>
+  </action>
+  <action name="unconnectedAction">
+   <property name="text">
+    <string>&amp;Unconnected</string>
+   </property>
+   <property name="iconText">
+    <string>Unconnected PV's</string>
+   </property>
+   <property name="toolTip">
+    <string>Unconnected PV's</string>
+   </property>
+  </action>
+  <action name="fileAction">
+   <property name="text">
+    <string>Open &amp;File</string>
+   </property>
+   <property name="toolTip">
+    <string>Open File</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="aboutAction">
+   <property name="text">
+    <string>&amp;About</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="directAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Direct</string>
+   </property>
+  </action>
+  <action name="timedAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Timed</string>
+   </property>
+  </action>
+  <action name="helpAction">
+   <property name="text">
+    <string>Contents</string>
+   </property>
+  </action>
+  <action name="emptycacheAction">
+   <property name="text">
+    <string>Emptycache</string>
+   </property>
+   <property name="toolTip">
+    <string>empty http download directory</string>
+   </property>
+  </action>
+  <action name="displayUrl">
+   <property name="text">
+    <string>url</string>
+   </property>
+  </action>
+  <action name="clearAction">
+   <property name="text">
+    <string>&amp;Clear Messages</string>
+   </property>
+  </action>
+  <action name="ReloadWindowAction">
+   <property name="text">
+    <string>Reload Activ &amp;Window</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="PrintWindowAction">
+   <property name="text">
+    <string>&amp;Print Activ Window</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

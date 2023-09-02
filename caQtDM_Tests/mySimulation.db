@@ -1,0 +1,1294 @@
+record(mbbi, "cachoice_test:CHOICE") {
+   field(ZRST, "Undefined")
+   field(ONST, "Option 1")
+   field(TWST, "Option 2")
+   field(THST, "Option 3")
+   field(FRST, "Option 4")
+   field(FVST, "Option 5")
+}
+
+record(mbbo, "enum01") {
+   field(ZRST, "Undefined")
+   field(ONST, "Option 1")
+   field(TWST, "Option 2")
+   field(THST, "Option 3")
+   field(FRST, "Option 4")
+   field(FVST, "Option 5")
+}
+
+record(waveform, "byteArray01"){
+        field(DESC, "char waveform")
+        field(FTVL, "CHAR")
+        field(NELM, "128")
+        field(PINI, "YES")
+}
+
+record(waveform, "floatArray01"){
+        field(DESC, "float waveform")
+        field(FTVL, "FLOAT")
+        field(NELM, "128")
+        field(PINI, "YES")
+}
+
+record(waveform, "doubleArray01"){
+        field(DESC, "double waveform")
+        field(FTVL, "DOUBLE")
+        field(NELM, "128")
+        field(PINI, "YES")
+}
+record(waveform, "intArray01"){
+        field(DESC, "int waveform")
+        field(FTVL, "LONG")
+        field(NELM, "128")
+        field(PINI, "YES")
+}
+record(waveform, "shortArray01"){
+        field(DESC, "short waveform")
+        field(FTVL, "SHORT")
+        field(NELM, "128")
+        field(PINI, "YES")
+}
+
+
+record(aao, "ACM:TEST:DOUBLE_AAO"){
+        field(FTVL, "DOUBLE")
+        field(NELM, "100")
+        field(PREC, "2")
+}
+
+record(mbbo, "88:MultipleBitMBBO") {
+  field(DTYP, "Soft Channel")
+  field(FLNK, "88:MultipleBitMBBI")
+  field(OUT, "88:MultipleBitMBBI PP")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(SCAN, "Passive")
+  field(FRVL, "4")
+  field(FVVL, "5")
+  field(SXVL, "6")
+  field(SVVL, "7")
+  field(EIVL, "8")
+  field(ZRST, "0")
+  field(ONST, "1")
+  field(TWST, "2")
+  field(THST, "3")
+  field(FRST, "4")
+  field(FVST, "5")
+  field(SXST, "6")
+  field(SVST, "7")
+  field(EIST, "8")
+}
+
+record(mbbi, "88:MultipleBitMBBI") {
+  field(SCAN, "Passive")
+  field(DTYP, "Soft Channel")
+}
+
+
+
+record(ao,"ACM:TEST:AO") {
+    field(DESC,"analog output record")
+    field(SCAN,"Passive")
+    field(PINI,"NO")
+    field(PHAS,"0")
+    field(EVNT,"0")
+    field(DTYP,"Soft Channel")
+    field(DISV,"1")
+    field(SDIS,"0.000000000000000e+00")
+    field(DISS,"NO_ALARM")
+    field(PRIO,"LOW")
+    field(FLNK,"0.000000000000000e+00")
+    field(OUT,"0.000000000000000e+00")
+    field(OROC,"0.0000000e+00")
+    field(DOL,"0.000000000000000e+00")
+    field(OMSL,"supervisory")
+    field(OIF,"Full")
+    field(PREC,"5")
+    field(LINR,"NO CONVERSION")
+    field(EGUF,"0.0000000e+00")
+    field(EGUL,"0.0000000e+00")
+    field(EGU,"V")
+    field(DRVH,"1000.0")
+    field(DRVL,"-1000.0")
+    field(HOPR,"900.0")
+    field(LOPR,"0.0")
+    field(AOFF,"0.0000000e+00")
+    field(ASLO,"0.0000000e+00")
+    field(HIHI,"900.0")
+    field(LOLO,"0.0")
+    field(HIGH,"450.0")
+    field(LOW,"0.0")
+    field(HHSV,"MAJOR")
+    field(LLSV,"NO_ALARM")
+    field(HSV,"MINOR")
+    field(LSV,"NO_ALARM")
+}
+
+record(ao, "ACM:MOTOR") {
+    field(DESC,"motor output record")
+    field(SCAN,"Passive")
+}
+
+record(ao,"ACM:TEST:AO:AMP") {
+    field(DESC,"analog output noise amplitude")
+    field(SCAN,"Passive")
+        field(DRVH,"10000000.0")
+    field(DRVL,"-10000000.0")
+    field(HOPR,"90000000.0")
+    field(LOPR,"0.0")
+}
+
+record(calc, "ACM:TEST:AO:NOISE"){
+        field(DESC,"analog output with noise")
+	field(INPA, "ACM:TEST:AO MS")
+	field(INPB, "ACM:TEST:AO:AMP MS")
+	field(CALC, "A+B*RNDM")
+	field(EGU,  "Units")
+	field(PREC, "1")
+        field(SCAN,".1 second")
+        field(HIHI,"900.0")
+	field(LOLO,"0.0")
+	field(HIGH,"450.0")
+	field(LOW,"0.0")
+	field(HHSV,"MAJOR")
+	field(LLSV,"NO_ALARM")
+	field(HSV,"MINOR")
+	field(LSV,"NO_ALARM")
+}
+
+record(bo,"ACM:TEST:BO") {
+    field(DESC,"binary output record")
+    field(SCAN,"1 second")
+    field(PINI,"NO")
+    field(PHAS,"0")
+    field(EVNT,"0")
+    field(DTYP,"Soft Channel")
+    field(DISV,"1")
+    field(SDIS,"0.000000000000000e+00")
+    field(DISS,"NO_ALARM")
+    field(PRIO,"LOW")
+    field(FLNK,"0.000000")
+    field(OMSL,"supervisory")
+    field(DOL,"0.000000000000000e+00")
+    field(OUT,"0.000000000000000e+00")
+    field(HIGH,"0.000000")
+    field(ZNAM,"false")
+    field(ONAM,"true")
+    field(ZSV,"NO_ALARM")
+    field(OSV,"NO_ALARM")
+    field(COSV,"NO_ALARM")
+    field(SIOL,"0.000000000000000e+00")
+    field(SIML,"0.000000000000000e+00")
+    field(SIMS,"NO_ALARM")
+    field(IVOA,"Continue normally")
+    field(IVOV,"0")
+}
+
+record(bo,"blue") {
+    field(DESC,"binary output record")
+    field(SCAN,"1 second")
+    field(PINI,"NO")
+    field(PHAS,"0")
+    field(EVNT,"0")
+    field(DTYP,"Soft Channel")
+    field(DISV,"1")
+    field(SDIS,"0.000000000000000e+00")
+    field(DISS,"NO_ALARM")
+    field(PRIO,"LOW")
+    field(FLNK,"0.000000")
+    field(OMSL,"supervisory")
+    field(DOL,"0.000000000000000e+00")
+    field(OUT,"0.000000000000000e+00")
+    field(HIGH,"0.000000")
+    field(ZNAM,"false")
+    field(ONAM,"true")
+    field(ZSV,"NO_ALARM")
+    field(OSV,"NO_ALARM")
+    field(COSV,"NO_ALARM")
+    field(SIOL,"0.000000000000000e+00")
+    field(SIML,"0.000000000000000e+00")
+    field(SIMS,"NO_ALARM")
+    field(IVOA,"Continue normally")
+    field(IVOV,"0")
+}
+
+
+record(ai,"ACM:TEST:AI") {
+    field(DESC,"analog input record")
+    field(SCAN,"Passive")
+    field(PINI,"NO")
+    field(PHAS,"0")
+    field(EVNT,"0")
+    field(DTYP,"Soft Channel")
+    field(DISV,"1")
+    field(SDIS,"0.000000000000000e+00")
+    field(DISS,"NO_ALARM")
+    field(PRIO,"LOW")
+    field(FLNK,"0.000000000000000e+00")
+    field(INP,"0.000000000000000e+00")
+    field(PREC,"6")
+    field(LINR,"LINEAR")
+    field(EGUF,"0.0000000e+00")
+    field(EGUL,"0.0000000e+00")
+    field(EGU,"volts")
+    field(HOPR,"0.0000000e+00")
+    field(LOPR,"0.0000000e+00")
+    field(AOFF,"0.0000000e+00")
+    field(ASLO,"0.0000000e+00")
+    field(SMOO,"0.0000000e+00")
+    field(HIHI,"0.0000000e+00")
+    field(LOLO,"0.0000000e+00")
+    field(HIGH,"0.0000000e+00")
+    field(LOW,"0.0000000e+00")
+    field(HHSV,"NO_ALARM")
+    field(LLSV,"NO_ALARM")
+    field(HSV,"NO_ALARM")
+    field(LSV,"NO_ALARM")
+    field(HYST,"0.000000000000000e+00")
+    field(ADEL,"0.000000000000000e+00")
+    field(MDEL,"0.000000000000000e+00")
+    field(SIOL,"0.000000000000000e+00")
+    field(SIML,"0.000000000000000e+00")
+    field(SIMS,"NO_ALARM")
+}
+record(longin,"ACM:TEST:LI") {
+    field(DESC,"long input record")
+    field(SCAN,"Passive")
+    field(PINI,"NO")
+    field(PHAS,"0")
+    field(EVNT,"0")
+    field(DTYP,"Soft Channel")
+    field(DISV,"1")
+    field(SDIS,"0.000000000000000e+00")
+    field(DISS,"NO_ALARM")
+    field(PRIO,"LOW")
+    field(FLNK,"0.000000000000000e+00")
+    field(INP,"0.000000000000000e+00")
+    field(EGU,"volts")
+    field(HOPR,"0")
+    field(LOPR,"0")
+    field(HIHI,"0")
+    field(LOLO,"0")
+    field(HIGH,"0")
+    field(LOW,"0")
+    field(HHSV,"NO_ALARM")
+    field(LLSV,"NO_ALARM")
+    field(HSV,"NO_ALARM")
+    field(LSV,"NO_ALARM")
+    field(HYST,"0")
+    field(ADEL,"0")
+    field(MDEL,"0")
+    field(SIOL,"0.000000000000000e+00")
+    field(SIML,"0.000000000000000e+00")
+    field(SIMS,"NO_ALARM")
+}
+record(bi,"ACM:TEST:BI") {
+    field(DESC,"binary input record")
+    field(SCAN,"Passive")
+    field(PINI,"NO")
+    field(PHAS,"0")
+    field(EVNT,"0")
+    field(DTYP,"Soft Channel")
+    field(DISV,"1")
+    field(SDIS,"0.000000000000000e+00")
+    field(DISS,"NO_ALARM")
+    field(PRIO,"LOW")
+    field(FLNK,"0.000000000000000e+00")
+    field(INP,"0.000000000000000e+00")
+    field(ZSV,"NO_ALARM")
+    field(OSV,"NO_ALARM")
+    field(COSV,"NO_ALARM")
+    field(ZNAM,"false")
+    field(ONAM,"true")
+    field(SIOL,"0.000000000000000e+00")
+    field(SIML,"0.000000000000000e+00")
+    field(SIMS,"NO_ALARM")
+}
+record(longout,"ACM:TEST:LO") {
+    field(DESC,"long output record")
+    field(SCAN,"Passive")
+    field(PINI,"NO")
+    field(PHAS,"0")
+    field(EVNT,"0")
+    field(DTYP,"Soft Channel")
+    field(DISV,"1")
+    field(SDIS,"0.000000000000000e+00")
+    field(DISS,"NO_ALARM")
+    field(PRIO,"LOW")
+    field(FLNK,"0.000000000000000e+00")
+    field(OUT,"0.000000000000000e+00")
+    field(DOL,"0.000000000000000e+00")
+    field(OMSL,"supervisory")
+    field(EGU,"units")
+    field(HOPR,"0")
+    field(LOPR,"0")
+    field(HIHI,"0")
+    field(LOLO,"0")
+    field(HIGH,"0")
+    field(LOW,"0")
+    field(HHSV,"NO_ALARM")
+    field(LLSV,"NO_ALARM")
+    field(HSV,"NO_ALARM")
+    field(LSV,"NO_ALARM")
+    field(HYST,"0")
+    field(ADEL,"0")
+    field(MDEL,"0")
+    field(SIOL,"0.000000000000000e+00")
+    field(SIML,"0.000000000000000e+00")
+    field(SIMS,"NO_ALARM")
+    field(IVOA,"Continue normally")
+    field(IVOV,"0")
+}
+
+record(stringin, "mynow")
+{
+   field (DESC, "Current time and date")
+   field (DTYP, "Soft Timestamp")
+   field (INP, "@%Y-%m-%d %H:%M:%S")
+   field(SCAN,"1 second")
+}
+
+record(stringin, "mystring")
+{
+   field (DESC, "a string")
+   field(SCAN,"1 second")
+}
+
+record(stringin, "bigstring01")
+{
+   field (DESC, "Current time and date")
+   field (DTYP, "Soft Timestamp")
+   field (INP, "@%Y-%m-%d %H:%M:%S")
+   field(SCAN,"1 second")
+}
+
+
+
+record(mbbo,"ACM:TEST:MBBO") {
+        field(ZRVL, "0")
+        field(ONVL, "1")
+        field(TWVL, "2")
+        field(THVL, "3")
+        field(FRVL, "4")
+        field(FVVL, "5")
+        field(SXVL, "6")
+        field(SVVL, "7")
+        field(EIVL, "8")
+        field(NIVL, "9")
+        field(TEVL, "10")
+        field(ELVL, "11")
+        field(TVVL, "12")
+        field(TTVL, "13")
+        field(FTVL, "14")
+        field(FFVL, "15")
+        
+        field(ZRST, "100.00 Hz")
+        field(ONST, "50.00 Hz")
+        field(TWST, "33.33 Hz")
+        field(THST, "25.00 Hz")
+        field(FRST, "16.66 Hz")
+        field(FVST, "10.00 Hz")
+        field(SXST, "8.33 Hz")
+        field(SVST, "5.00 Hz")
+        field(EIST, "2.50 Hz")
+        field(NIST, "1.00 Hz")      
+}
+
+record(mbbo,"ACM:TEST1:MBBO") {
+        field(ZRVL, "0")
+        field(ONVL, "1")
+        field(TWVL, "2")
+        field(ZRST, " ")
+        field(ONST, " ")
+        field(TWST, " ")        
+}
+
+record(mbbo,"ACM:TEST2:MBBO") {
+        field(ZRVL, "0")
+        field(ONVL, "1")
+        field(ZRST, "LOW")
+        field(ONST, "HIGH")      
+}
+
+record(bo,"ACM:TEST3:BO") {
+        field(ZNAM,"LOW")
+        field(ONAM,"HIGH")
+}
+
+
+record(waveform, "ACM:TEST:WAVE"){
+        field(DESC, "char waveform")
+        field(FTVL, "CHAR")
+        field(NELM, "128")
+}
+
+
+record(waveform,"BUSY") {
+        field(DESC, "busy")
+        field(FTVL, "CHAR")
+        field(NELM, "1")
+
+}
+
+record(ao,"float03") {
+    field(DESC,"analog output")
+    field(SCAN,"Passive")
+    field(PREC,"3")
+    field(EGU,"V")
+    field(DRVH,"1000.0")
+    field(DRVL,"-1000.0")
+    field(HOPR,"900.0")
+    field(LOPR,"0.0")
+    field(HIHI,"900.0")
+    field(LOLO,"0.0")
+    field(HIGH,"450.0")
+    field(LOW,"0.0")
+    field(HHSV,"MAJOR")
+    field(LLSV,"NO_ALARM")
+    field(HSV,"MINOR")
+    field(LSV,"NO_ALARM")
+}
+
+
+record(calc,"ACM:COUNT:1") {
+        field(DESC, "counter")
+        field(EGU, "value")
+        field(CALC, "A+1")
+        field(INPA, "ACM:COUNT:1")
+        field(PREC, "5")
+        field(SCAN, "1 second")
+}
+
+record(calcout,"ACM:COUNT:2") {
+        field(CALC, "A>4?0:B")
+        field(INPA, "ACM:COUNT:1")
+        field(INPB, "ACM:COUNT:1")
+        field(OUT,  "ACM:COUNT:1")
+        field(PREC, "2")
+        field(SCAN, "1 second")
+}
+
+record(ao, "QUAD:SOL:1"){
+	field(DESC, "Sollwert")
+	field(EGU,  "Units")
+	field(HOPR, "65535")
+	field(LOPR, "-65535")
+	field(DRVH, "65535")
+	field(DRVL, "-65535")
+	field(IVOA, "Don't drive outputs")
+	field(PREC, "0")
+}
+
+record(mbbi,"QUAD:STA:2") {
+        field(INP, "QUAD:COM:2 MS CP")
+        field(ZRVL, "0")
+        field(ONVL, "1")
+        field(TWVL, "2")
+        field(ZRST, "OFF")
+        field(ONST, "ON")
+        field(TWST, "RESET")
+}
+
+record(mbbo,"QUAD:COM:2") {
+        field(ZRVL, "0")
+        field(ONVL, "1")
+        field(TWVL, "2")
+        field(ZRST, "OFF")
+        field(ONST, "ON")
+        field(TWST, "RESET")
+        field(IVOA, "Don't drive outputs")
+        field(OUT, "QUAD:STA:2")
+}
+
+record(calc, "QUAD:SOLRB:1"){
+	field(INPA, "QUAD:SOL:1 MS CP")
+	field(CALC, "A")
+	field(EGU,  "Units")
+	field(PREC, "0")
+}
+
+record(calc, "QUAD:IST:1"){
+	field(INPA, "QUAD:SOL:1 MS CP")
+	field(CALC, "A")
+	field(EGU,  "Units")
+	field(PREC, "0")
+}
+
+record(calc, "QUAD:IST:2"){
+	field(INPA, "QUAD:SOL:1 MS CP")
+	field(CALC, "A")
+	field(EGU,  "A")
+	field(PREC, "3")
+}
+
+record(calc, "QUAD:IST:3"){
+	field(INPA, "QUAD:SOL:1 MS CP")
+	field(CALC, "A")
+	field(EGU,  "kG")
+	field(PREC, "3")
+}
+
+record(ao, "QUAD1:SOL:1"){
+	field(DESC, "Sollwert")
+	field(EGU,  "Units")
+	field(HOPR, "65535")
+	field(LOPR, "-65535")
+	field(DRVH, "65535")
+	field(DRVL, "-65535")
+	field(IVOA, "Don't drive outputs")
+	field(PREC, "0")
+}
+
+record(mbbi,"QUAD1:STA:2") {
+        field(INP, "QUAD1:COM:2 MS CP")
+        field(ZRVL, "0")
+        field(ONVL, "1")
+        field(TWVL, "2")
+        field(ZRST, "OFF")
+        field(ONST, "ON")
+        field(TWST, "RESET")
+}
+
+record(mbbo,"QUAD1:COM:2") {
+        field(ZRVL, "0")
+        field(ONVL, "1")
+        field(TWVL, "2")
+        field(ZRST, "OFF")
+        field(ONST, "ON")
+        field(TWST, "RESET")
+        field(IVOA, "Don't drive outputs")
+        field(OUT, "QUAD1:STA:2")
+}
+
+record(calc, "QUAD1:SOLRB:1"){
+	field(INPA, "QUAD1:SOL:1 MS CP")
+	field(CALC, "A")
+	field(EGU,  "Units")
+	field(PREC, "0")
+}
+
+record(calc, "QUAD1:IST:1"){
+	field(INPA, "QUAD1:SOL:1 MS CP")
+	field(CALC, "A")
+	field(EGU,  "Units")
+	field(PREC, "0")
+}
+
+record(calc, "QUAD1:IST:2"){
+	field(INPA, "QUAD1:SOL:1 MS CP")
+	field(CALC, "A")
+	field(EGU,  "A")
+	field(PREC, "3")
+}
+
+record(calc, "QUAD1:IST:3"){
+	field(INPA, "QUAD1:SOL:1 MS CP")
+	field(CALC, "A")
+	field(EGU,  "kG")
+	field(PREC, "3")
+}
+
+
+record(ao, "QUAD2:SOL:1"){
+	field(DESC, "Sollwert")
+	field(EGU,  "Units")
+	field(HOPR, "65535")
+	field(LOPR, "-65535")
+	field(DRVH, "65535")
+	field(DRVL, "-65535")
+	field(IVOA, "Don't drive outputs")
+	field(PREC, "0")
+}
+
+record(mbbi,"QUAD2:STA:2") {
+        field(INP, "QUAD2:COM:2 MS CP")
+        field(ZRVL, "0")
+        field(ONVL, "1")
+        field(TWVL, "2")
+        field(ZRST, "OFF")
+        field(ONST, "ON")
+        field(TWST, "RESET")
+}
+
+record(mbbo,"QUAD2:COM:2") {
+        field(ZRVL, "0")
+        field(ONVL, "1")
+        field(TWVL, "2")
+        field(ZRST, "OFF")
+        field(ONST, "ON")
+        field(TWST, "RESET")
+        field(IVOA, "Don't drive outputs")
+        field(OUT, "QUAD2:STA:2")
+}
+
+record(calc, "QUAD2:SOLRB:1"){
+	field(INPA, "QUAD2:SOL:1 MS CP")
+	field(CALC, "A")
+	field(EGU,  "Units")
+	field(PREC, "0")
+}
+
+record(calc, "QUAD2:IST:1"){
+	field(INPA, "QUAD2:SOL:1 MS CP")
+	field(CALC, "A")
+	field(EGU,  "Units")
+	field(PREC, "0")
+}
+
+record(calc, "QUAD2:IST:2"){
+	field(INPA, "QUAD2:SOL:1 MS CP")
+	field(CALC, "A")
+	field(EGU,  "A")
+	field(PREC, "3")
+}
+
+record(calc, "QUAD2:IST:3"){
+	field(INPA, "QUAD2:SOL:1 MS CP")
+	field(CALC, "A")
+	field(EGU,  "kG")
+	field(PREC, "3")
+}
+
+record(waveform, "ACM:TEST:DOUBLE_WAVE"){
+        field(FTVL, "DOUBLE")
+        field(NELM, "100")
+        field(PREC, "2")
+}
+
+record(waveform, "ACM:TEST:LONG_WAVE"){
+        field(FTVL, "LONG")
+        field(NELM, "100")
+	field(HOPR,"1200")
+	field(LOPR,"-200")
+}
+
+record(waveform, "ACM:TEST:CHAR_WAVE"){
+        field(FTVL, "CHAR")
+        field(NELM, "100")
+	field(HOPR,"1200")
+	field(LOPR,"-200")
+}
+
+record(waveform, "ACM:TEST:UCHAR_WAVE"){
+        field(FTVL, "UCHAR")
+        field(NELM, "100")
+	field(HOPR,"1200")
+	field(LOPR,"-200")
+}
+
+record(waveform, "ACM:TEST:STRING_WAVE"){
+        field(DESC, "string waveform")
+        field(FTVL, "STRING")
+        field(NELM, "100")
+}
+
+record(waveform,"ACM:TEST:SHORT_WAVE") {
+        field(FTVL, "SHORT")
+        field(NELM, "100")
+	field(HOPR,"1200")
+	field(LOPR,"-200")
+}
+
+record(ai,"LI:OP:demo1AI") {
+	field(DESC,"demo pv")
+	field(ASG,"")
+	field(SCAN,"Passive")
+	field(PINI,"YES")
+	field(PHAS,"0")
+	field(EVNT,"0")
+	field(TSEL,"0")
+	field(DTYP,"Soft Channel")
+	field(DISV,"1")
+	field(SDIS,"0")
+	field(DISS,"NO_ALARM")
+	field(PRIO,"LOW")
+	field(FLNK,"0")
+	field(INP,"1.5")
+	field(PREC,"2")
+	field(LINR,"NO CONVERSION")
+	field(EGUF,"0")
+	field(EGUL,"0")
+	field(EGU,"Volts")
+	field(HOPR,"10")
+	field(LOPR,"0")
+	field(AOFF,"0")
+	field(ASLO,"1")
+	field(SMOO,"0")
+	field(HIHI,"9")
+	field(LOLO,"0")
+	field(HIGH,"7")
+	field(LOW,"0")
+	field(HHSV,"MAJOR")
+	field(LLSV,"NO_ALARM")
+	field(HSV,"MINOR")
+	field(LSV,"NO_ALARM")
+	field(HYST,"0")
+	field(ADEL,"0")
+	field(MDEL,"0")
+	field(SIOL,"0")
+	field(SIML,"0")
+	field(SIMS,"NO_ALARM")
+}
+record(ai,"LI:OP:demo2AI") {
+	field(DESC,"demo pv")
+	field(ASG,"")
+	field(SCAN,"Passive")
+	field(PINI,"YES")
+	field(PHAS,"0")
+	field(EVNT,"0")
+	field(TSEL,"0")
+	field(DTYP,"Soft Channel")
+	field(DISV,"1")
+	field(SDIS,"0")
+	field(DISS,"NO_ALARM")
+	field(PRIO,"LOW")
+	field(FLNK,"0")
+	field(INP,"1.5")
+	field(PREC,"2")
+	field(LINR,"NO CONVERSION")
+	field(EGUF,"0")
+	field(EGUL,"0")
+	field(EGU,"Volts")
+	field(HOPR,"10")
+	field(LOPR,"0")
+	field(AOFF,"0")
+	field(ASLO,"1")
+	field(SMOO,"0")
+	field(HIHI,"10")
+	field(LOLO,"1")
+	field(HIGH,"10")
+	field(LOW,"2")
+	field(HHSV,"NO_ALARM")
+	field(LLSV,"MAJOR")
+	field(HSV,"NO_ALARM")
+	field(LSV,"MINOR")
+	field(HYST,"0")
+	field(ADEL,"0")
+	field(MDEL,"0")
+	field(SIOL,"0")
+	field(SIML,"0")
+	field(SIMS,"NO_ALARM")
+}
+record(ai,"LI:OP:demo3AI") {
+	field(DESC,"demo pv")
+	field(ASG,"")
+	field(SCAN,"Passive")
+	field(PINI,"YES")
+	field(PHAS,"0")
+	field(EVNT,"0")
+	field(TSEL,"0")
+	field(DTYP,"Soft Channel")
+	field(DISV,"1")
+	field(SDIS,"0")
+	field(DISS,"NO_ALARM")
+	field(PRIO,"LOW")
+	field(FLNK,"0")
+	field(INP,"1.5")
+	field(PREC,"2")
+	field(LINR,"NO CONVERSION")
+	field(EGUF,"0")
+	field(EGUL,"0")
+	field(EGU,"Volts")
+	field(HOPR,"10")
+	field(LOPR,"0")
+	field(AOFF,"0")
+	field(ASLO,"1")
+	field(SMOO,"0")
+	field(HIHI,"10")
+	field(LOLO,"1.5")
+	field(HIGH,"10")
+	field(LOW,"3")
+	field(HHSV,"NO_ALARM")
+	field(LLSV,"MAJOR")
+	field(HSV,"NO_ALARM")
+	field(LSV,"MINOR")
+	field(HYST,"0")
+	field(ADEL,"0")
+	field(MDEL,"0")
+	field(SIOL,"0")
+	field(SIML,"0")
+	field(SIMS,"NO_ALARM")
+}
+record(ai,"LI:OP:demo4AI") {
+	field(DESC,"demo pv")
+	field(ASG,"")
+	field(SCAN,"Passive")
+	field(PINI,"YES")
+	field(PHAS,"0")
+	field(EVNT,"0")
+	field(TSEL,"0")
+	field(DTYP,"Soft Channel")
+	field(DISV,"1")
+	field(SDIS,"0")
+	field(DISS,"NO_ALARM")
+	field(PRIO,"LOW")
+	field(FLNK,"0")
+	field(INP,"1.5")
+	field(PREC,"2")
+	field(LINR,"NO CONVERSION")
+	field(EGUF,"0")
+	field(EGUL,"0")
+	field(EGU,"Volts")
+	field(HOPR,"10")
+	field(LOPR,"0")
+	field(AOFF,"0")
+	field(ASLO,"1")
+	field(SMOO,"0")
+	field(HIHI,"8.5")
+	field(LOLO,"0")
+	field(HIGH,"6.5")
+	field(LOW,"0")
+	field(HHSV,"MAJOR")
+	field(LLSV,"NO_ALARM")
+	field(HSV,"MINOR")
+	field(LSV,"NO_ALARM")
+	field(HYST,"0")
+	field(ADEL,"0")
+	field(MDEL,"0")
+	field(SIOL,"0")
+	field(SIML,"0")
+	field(SIMS,"NO_ALARM")
+}
+record(ai,"LI:OP:demoAI") {
+	field(DESC,"demo pv")
+	field(ASG,"")
+	field(SCAN,"Passive")
+	field(PINI,"YES")
+	field(PHAS,"0")
+	field(EVNT,"0")
+	field(TSEL,"0")
+	field(DTYP,"Soft Channel")
+	field(DISV,"1")
+	field(SDIS,"0")
+	field(DISS,"NO_ALARM")
+	field(PRIO,"LOW")
+	field(FLNK,"0")
+	field(INP,"1.5")
+	field(PREC,"2")
+	field(LINR,"NO CONVERSION")
+	field(EGUF,"0")
+	field(EGUL,"0")
+	field(EGU,"Volts")
+	field(HOPR,"10")
+	field(LOPR,"0")
+	field(AOFF,"0")
+	field(ASLO,"1")
+	field(SMOO,"0")
+	field(HIHI,"0")
+	field(LOLO,"0")
+	field(HIGH,"0")
+	field(LOW,"0")
+	field(HHSV,"NO_ALARM")
+	field(LLSV,"NO_ALARM")
+	field(HSV,"NO_ALARM")
+	field(LSV,"NO_ALARM")
+	field(HYST,"0")
+	field(ADEL,"0")
+	field(MDEL,"0")
+	field(SIOL,"0")
+	field(SIML,"0")
+	field(SIMS,"NO_ALARM")
+}
+record(bi,"LI:OP:demoBI") {
+	field(DESC,"demo pv")
+	field(ASG,"")
+	field(SCAN,"Passive")
+	field(PINI,"YES")
+	field(PHAS,"0")
+	field(EVNT,"0")
+	field(TSEL,"0")
+	field(DTYP,"Soft Channel")
+	field(DISV,"1")
+	field(SDIS,"0")
+	field(DISS,"NO_ALARM")
+	field(PRIO,"LOW")
+	field(FLNK,"0")
+	field(INP,"0")
+	field(ZSV,"NO_ALARM")
+	field(OSV,"MAJOR")
+	field(COSV,"NO_ALARM")
+	field(ZNAM,"Off")
+	field(ONAM,"On")
+	field(SIOL,"0")
+	field(SIML,"0")
+	field(SIMS,"NO_ALARM")
+}
+record(calc,"LI:OP:demoCC") {
+	field(DESC,"")
+	field(ASG,"")
+	field(SCAN,"1 second")
+	field(PINI,"NO")
+	field(PHAS,"0")
+	field(EVNT,"0")
+	field(TSEL,"0")
+	field(DISV,"1")
+	field(SDIS,"0")
+	field(DISS,"NO_ALARM")
+	field(PRIO,"LOW")
+	field(FLNK,"0")
+	field(CALC,"a=8?2:a+1")
+	field(INPA,"LI:OP:demoCC.VAL NPP NMS")
+	field(INPB,"0")
+	field(INPC,"0")
+	field(INPD,"0")
+	field(INPE,"0")
+	field(INPF,"0")
+	field(INPG,"0")
+	field(INPH,"0")
+	field(INPI,"0")
+	field(INPJ,"0")
+	field(INPK,"0")
+	field(INPL,"0")
+	field(EGU,"counts")
+	field(PREC,"0")
+	field(HOPR,"10")
+	field(LOPR,"0")
+	field(HIHI,"0")
+	field(LOLO,"0")
+	field(HIGH,"0")
+	field(LOW,"0")
+	field(HHSV,"NO_ALARM")
+	field(LLSV,"NO_ALARM")
+	field(HSV,"NO_ALARM")
+	field(LSV,"NO_ALARM")
+	field(HYST,"0")
+	field(ADEL,"0")
+	field(MDEL,"0")
+}
+record(mbbi,"LI:OP:demoMI") {
+	field(DESC,"demo pv")
+	field(ASG,"")
+	field(SCAN,"Passive")
+	field(PINI,"YES")
+	field(PHAS,"0")
+	field(EVNT,"0")
+	field(TSEL,"0")
+	field(DTYP,"Soft Channel")
+	field(DISV,"1")
+	field(SDIS,"0")
+	field(DISS,"NO_ALARM")
+	field(PRIO,"LOW")
+	field(FLNK,"0")
+	field(NOBT,"3")
+	field(INP,"0")
+	field(ZRVL,"0x1")
+	field(ONVL,"0x2")
+	field(TWVL,"0x3")
+	field(THVL,"0x4")
+	field(FRVL,"0x5")
+	field(FVVL,"0x6")
+	field(SXVL,"0x0")
+	field(SVVL,"0x0")
+	field(EIVL,"0x0")
+	field(NIVL,"0x0")
+	field(TEVL,"0x0")
+	field(ELVL,"0x0")
+	field(TVVL,"0x0")
+	field(TTVL,"0x0")
+	field(FTVL,"0x0")
+	field(FFVL,"0x0")
+	field(ZRST,"Choice 1")
+	field(ONST,"Choice 2")
+	field(TWST,"Choice 3")
+	field(THST,"Choice 4")
+	field(FRST,"Choice 5")
+	field(FVST,"Choice 6")
+	field(SXST,"")
+	field(SVST,"")
+	field(EIST,"")
+	field(NIST,"")
+	field(TEST,"")
+	field(ELST,"")
+	field(TVST,"")
+	field(TTST,"")
+	field(FTST,"")
+	field(FFST,"")
+	field(ZRSV,"NO_ALARM")
+	field(ONSV,"NO_ALARM")
+	field(TWSV,"MINOR")
+	field(THSV,"NO_ALARM")
+	field(FRSV,"NO_ALARM")
+	field(FVSV,"MAJOR")
+	field(SXSV,"NO_ALARM")
+	field(SVSV,"NO_ALARM")
+	field(EISV,"NO_ALARM")
+	field(NISV,"NO_ALARM")
+	field(TESV,"NO_ALARM")
+	field(ELSV,"NO_ALARM")
+	field(TVSV,"NO_ALARM")
+	field(TTSV,"NO_ALARM")
+	field(FTSV,"NO_ALARM")
+	field(FFSV,"NO_ALARM")
+	field(UNSV,"NO_ALARM")
+	field(COSV,"NO_ALARM")
+	field(SIOL,"0")
+	field(SIML,"0")
+	field(SIMS,"NO_ALARM")
+}
+record (bo, "ACM:TEST:BO1")
+{
+field(ZNAM, "DONE")
+field(ONAM, "HOME")
+}
+
+record (bo, "ACM:TEST:BO2")
+{
+field(ZNAM, "ZERO")
+field(ONAM, "ONE")
+}
+
+record (bo, "ACM:TEST:BO3")
+{
+}
+
+record(waveform, "ACM:REG2D:X:1"){
+        field(FTVL, "DOUBLE")
+        field(NELM, "100")
+        field(PREC, "3")
+}
+record(waveform, "ACM:REG2D:Y:1"){
+        field(FTVL, "DOUBLE")
+        field(NELM, "100")
+        field(PREC, "3")
+}
+record(waveform, "ACM:REG2D:X:2"){
+        field(FTVL, "DOUBLE")
+        field(NELM, "100")
+        field(PREC, "3")
+}
+record(waveform, "ACM:REG2D:Y:2"){
+        field(FTVL, "DOUBLE")
+        field(NELM, "100")
+        field(PREC, "3")
+}
+record(waveform, "ACM:REG2D:X"){
+        field(FTVL, "DOUBLE")
+        field(NELM, "100")
+        field(PREC, "3")
+}
+record(waveform, "ACM:REG2D:Y"){
+        field(FTVL, "DOUBLE")
+        field(NELM, "100")
+        field(PREC, "3")
+}
+
+record(ao, "roi:x"){
+	field(DESC, "Sollwert")
+	field(PREC, "3")
+}
+record(ao, "roi:y"){
+	field(DESC, "Sollwert")
+	field(PREC, "3")
+}
+record(ao, "roi:w"){
+	field(DESC, "Sollwert")
+	field(PREC, "3")
+}
+record(ao, "roi:h"){
+	field(DESC, "Sollwert")
+	field(PREC, "3")
+}
+record(ao, "99:SliderAO") {
+  field(DTYP, "Soft Channel")
+  field(PREC, "0")
+  field(DRVH, "100")
+  field(DRVL, "0")
+  field(HOPR, "95")
+  field(LOPR, "5")
+  field(HIGH, "100")
+  field(LOW, "0")
+  field(FLNK, "99:MeterAI")
+  field(OUT, "99:MeterAI PP")
+}
+
+record(ai, "99:MeterAI") {
+  field(SCAN, "Passive")
+  field(DTYP, "Soft Channel")
+  field(PREC, "0")
+  field(HOPR, "50")
+  field(LOPR, "0")
+  field(HIGH, "80")
+  field(LOW, "20")
+  field(FLNK, "99:SliderCountBO")
+  field(HIHI, "90")
+  field(LOLO, "10")
+  field(HHSV, "MAJOR")
+  field(LLSV, "MAJOR")
+  field(HSV, "MINOR")
+  field(LSV, "MINOR")
+}
+
+record(mbbiDirect, "MBBIDIECT" )
+{
+ field(DESC, "BIT")
+ field(SCAN, "Passive")
+ field(DTYP, "Soft Channel")
+}
+
+############## these records are used for the simulation in Geiss
+
+record(ao, "SI"){
+	field(DESC, "Boundary minimum")
+	field(PREC, "3")
+}
+
+record(ao, "SX")
+{
+  field(DTYP, "Soft Channel")
+  field(PREC, "1")
+  field(DRVH, "1000")
+  field(DRVL, "-1000")
+  field(HOPR, "900")
+  field(LOPR, "100")
+  field(FLNK, "SZ")
+  field(OUT, "SZ PP")
+}
+
+record(ao, "SY")
+{
+  field(DTYP, "Soft Channel")
+  field(PREC, "1")
+  field(FLNK, "SZ")
+  field(OUT, "SYC PP")
+}
+
+record(ao, "SX")
+{
+  field(DTYP, "Soft Channel")
+  field(PREC, "1")
+  field(FLNK, "SZ")
+  field(OUT, "SXC PP")
+}
+
+record(calc, "SXC")
+{
+  field(INPA, "SX MS")
+  field(CALC, "0.07*(A-500)/20")
+}
+
+record(calc, "SYC")
+{
+  field(INPA, "SY MS")
+  field(CALC, "0.07*(A-1250)/50")
+}
+
+record(calc, "SZ")
+{
+	field(INPA, "SXC MS")
+	field(INPB, "SYC MS")
+	field(CALC,"(0.25*A*A*A*A-0.5*A*A) -0.12*A + (0.25*B*B*B*B-0.5*B*B) +1.0 -0.05*B")
+}
+
+###########################################################################################
+
+#record(waveform, "ACM:PICTURE"){
+#	field(DTYP, "fileread")
+#	field(INP, "@bayerpicture.dat")
+#        field(DESC, "16bit image waveform")
+#        field(FTVL, "SHORT")
+#        field(NELM, "16000000")
+#        field(SCAN,"1 second")
+#}
+
+record(ao, "ACM:PICTURE:WIDTH"){
+        field(DESC, "width")
+        field(SCAN,"1 second")   
+	field(VAL, "1410")  
+}
+
+record(ao, "ACM:PICTURE:HEIGHT"){
+        field(DESC, "height")
+        field(SCAN,"1 second")
+	field(VAL, "930")
+}
+
+record(ao, "ACM:BPM1") {
+}
+record(ao, "ACM:BPM2") {
+}
+record(ao, "ACM:BPM3") {
+}
+record(ao, "ACM:BPM4") {
+}
+record(ao, "ACM:BPM5") {
+}
+
+record(ai,"ACM:BPM1:X") {
+    field(SCAN,"Passive")
+    field(PINI,"YES")
+    field(INP,"10")
+}
+record(ai,"ACM:BPM1:Y") {
+    field(SCAN,"Passive")
+    field(PINI,"YES")
+    field(INP,"10")
+}
+record(ai,"ACM:BPM2:X") {
+    field(SCAN,"Passive")
+    field(PINI,"YES")
+    field(INP,"50")
+}
+record(ai,"ACM:BPM2:Y") {
+    field(SCAN,"Passive")
+    field(PINI,"YES")
+    field(INP,"10")
+}
+record(ai,"ACM:BPM3:X") {
+    field(SCAN,"Passive")
+    field(PINI,"YES")
+    field(INP,"110")
+}
+record(ai,"ACM:BPM3:Y") {
+    field(SCAN,"Passive")
+    field(PINI,"YES")
+    field(INP,"20")
+}
+record(ai,"ACM:BPM4:X") {
+    field(SCAN,"Passive")
+    field(PINI,"YES")
+    field(INP,"200")
+}
+record(ai,"ACM:BPM4:Y") {
+    field(SCAN,"Passive")
+    field(PINI,"YES")
+    field(INP,"10")
+}
+record(ai,"ACM:BPM5:X") {
+    field(SCAN,"Passive")
+    field(PINI,"YES")
+    field(INP,"350")
+}
+record(ai,"ACM:BPM5:Y") {
+    field(SCAN,"Passive")
+    field(PINI,"YES")
+    field(INP,"10")
+}
+
+
+record(ao,"ACM:TEST:EGU:1") {
+    field(DESC,"EGU Test Record Joule")
+    field(EGU,"uJ")
+    field(VAL,"42")
+}
+record(ao,"ACM:TEST:EGU:2") {
+    field(DESC,"EGU Test Record Joule")
+    field(EGU,"muJ")
+    field(VAL,"42")
+}
+record(ao,"ACM:TEST:EGU:3") {
+    field(DESC,"EGU Test Record Ampere")
+    field(EGU,"uA")
+    field(VAL,"42")
+}
+record(ao,"ACM:TEST:EGU:4") {
+    field(DESC,"EGU Test Record Ampere")
+    field(EGU,"muA")
+    field(VAL,"42")
+}
+record(ao,"ACM:TEST:EGU:5") {
+    field(DESC,"EGU Test Record Celsius")
+    field(EGU,"°C")
+    field(VAL,"42")
+}

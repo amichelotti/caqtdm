@@ -1,0 +1,117 @@
+#!/bin/bash
+
+  if [ -z "$QTHOME" ];                then export   QTHOME=/usr;
+  fi
+  if [ -z "$QWTHOME" ];               then export   QWTHOME=/usr;
+  fi
+  if [ -z "$QWTINCLUDE" ];            then export   QWTINCLUDE=/usr/include/qwt;
+  fi
+  if [ -z "$QWTLIB" ];                then export   QWTLIB=${QWTHOME}/lib;
+  fi
+  if [ -z "$QWTVERSION" ];            then export   QWTVERSION=6.1;
+  fi
+  # on unix library can be libqwt or libqwt-qt5 or ...
+  if [ -z "$QWTLIBNAME" ];            then export   QWTLIBNAME=qwt;
+  fi
+  if [ -z "$EPICS_BASE" ];            then export   EPICS_BASE=/usr/local/epics/base;
+  fi
+  if [ -z "$EPICSINCLUDE" ];          then export   EPICSINCLUDE=${EPICS_BASE}/include;
+  fi
+  if [ -z "$EPICSLIB" ];              then  export  EPICSLIB=${EPICS_BASE}/lib/$EPICS_HOST_ARCH;
+  fi
+  if [ -z "$EPICS4LOCATION" ];         then  export  EPICS4LOCATION=/home/mezger/EPICS-CPP-4.6.0/
+  fi
+  if [ -z "$EPICSEXTENSIONS" ];     then  export  EPICSEXTENSIONS=/usr/local/epics/extensions;
+  fi
+  if [ -z "$QTCONTROLS_LIBS" ];       then export  QTCONTROLS_LIBS=`pwd`/caQtDM_Binaries;
+  fi
+  if [ -z "$CAQTDM_COLLECT" ];       then export  CAQTDM_COLLECT=`pwd`/caQtDM_Binaries;
+  fi
+  export  QTBASE=${QTCONTROLS_LIBS};
+  
+  if [ -z "$CAQTDM_CA_ARCHIVELIBS" ];       then export  CAQTDM_CA_ARCHIVELIBS=`pwd`/caQtDM_Binaries;
+  fi
+  if [ -z "$CAQTDM_LOGGING_ARCHIVELIBS" ];       then export  CAQTDM_LOGGING_ARCHIVELIBS=`pwd`/caQtDM_Binaries;
+  fi
+
+  if [ -z "$QTDM_LIBINSTALL" ];  then  export  QTDM_LIBINSTALL=$EPICSEXTENSIONS/lib/$EPICS_HOST_ARCH;
+  fi
+  if [ -z "$QTDM_BININSTALL" ];   then  export  QTDM_BININSTALL=$EPICSEXTENSIONS/bin/$EPICS_HOST_ARCH;
+  fi
+  
+  if [ -z "$PYTHONVERSION" ];   then  export  PYTHONVERSION=2.6;
+  fi
+  if [ -z "$PYTHONINCLUDE" ];   then  export  PYTHONINCLUDE=/usr/include/python$PYTHONVERSION;
+  fi
+  if [ -z "$PYTHONLIB" ];   then  export  PYTHONLIB=/usr/lib/;
+  fi 
+
+  if [ -z "$ZMQ" ];   then  export  ZMQ=/usr/local;
+  fi 
+  if [ -z "$ZMQINC" ];   then  export  ZMQINC=$ZMQ/include;
+  fi 
+  if [ -z "$ZMQLIB" ];   then  export  ZMQLIB=$ZMQ/lib;
+  fi 
+
+
+  
+  if [ -z "$TROLLTECH" ]; then
+    echo
+    echo ====== do not use psi trolltech directories
+    echo
+    if [ -z "$QTDM_RPATH" ];   then export  QTDM_RPATH=${QTDM_LIBINSTALL}:$TROLLTECH/binQt:${QTBASE};
+    fi
+  else
+    echo
+    echo ====== use psi trolltech directories
+    echo 
+    if [ -z "$QTDM_RPATH" ];   then export  QTDM_RPATH=${QTDM_LIBINSTALL}:$TROLLTECH/binQt;
+    fi 
+  fi
+
+ if [ -z "$QTDM_RPATH" ];   then export  QTDM_RPATH=${QTDM_LIBINSTALL}:$TROLLTECH/binQt:${QTBASE};
+ fi
+
+echo =============================================================================================
+echo in order to build this package you will eventually have to redefine following variables in 
+echo this file, they are taken from your environment if they exist, otherwise define them yourself:
+echo
+echo for building:
+echo
+echo QTHOME               now defined as ${QTHOME}               for locating Qt
+echo QWTHOME              now defined as ${QWTHOME}              for locating qwt
+echo QWTINCLUDE           now defined as ${QWTINCLUDE}           for locating the include files of qwt
+echo QWTLIB               now defined as ${QWTLIB}               for locating the libraries of qwt
+echo EPICS_BASE           now defined as ${EPICS_BASE}           for locating epics 
+echo EPICSINCLUDE         now defined as ${EPICSINCLUDE}         for locating epics include files
+echo EPICSLIB             now defined as ${EPICSLIB}             for locating epics libraries
+echo QTBASE               now defined as ${QTBASE}               for building the package locally, pointing to caQtDM_Binaries
+echo QTDM_RPATH           now defined as ${QTDM_RPATH}           for runtime search path 
+echo
+echo libraries for channel access archive and logging archive:
+echo
+echo CAQTDM_LOGGING_ARCHIVELIBS      now defined as ${CAQTDM_LOGGING_ARCHIVELIBS}   for logging archive rpc library
+echo CAQTDM_CA_ARCHIVELIBS           now defined as ${CAQTDM_CA_ARCHIVELIBS}   for channel access archive library
+echo
+echo for python:
+echo
+echo PYTHONVERSION        now defined as ${PYTHONVERSION}        for locating python
+echo PYTHONINCLUDE        now defined as ${PYTHONINCLUDE}        for locating python include files
+echo PYTHONLIB            now defined as ${PYTHONLIB}            for locating python libraries
+echo
+echo for zmq:
+echo
+echo ZMQINC               now defined as ${ZMQINC}               for locating zmq include files
+echo ZMQLIB               now defined as ${ZMQLIB}               for locating zmq libraries
+echo
+echo for install:
+echo
+echo EPICSEXTENSIONS      now defined as ${EPICSEXTENSIONS}      for locating epics extensions
+echo QTDM_LIBINSTALL      now defined as ${QTDM_LIBINSTALL}      for libraries install 
+echo QTDM_BININSTALL      now defined as ${QTDM_BININSTALL}      for binaries install
+echo ============================================================================================
+echo 
+
+
+
+
