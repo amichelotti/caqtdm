@@ -1,4 +1,5 @@
 # Overview
+
 __caQtDM__ offers a collection of special widgets in order to display and control control system data in various ways. The widgets have been inspired from the well known MEDM package used
 at many EPICS sites. However caQtDM is not restricted to EPICS and can/could also support other control systems. At PSI caQtDM is used at several facilities and controls not only EPICS, but also simultaneously
 an older house-made system. Moreover support has already been introduced for EPICS4, but is still in development.
@@ -7,6 +8,10 @@ an older house-made system. Moreover support has already been introduced for EPI
 In case of existing MEDM files, these can be translated to Qt xml files by using the utility adl2ui contained in the package. Normally nothing will have to be changed in the resulting files, but in case of small problems, like for instance in overlapping order, the Qt4-designer can be used to correct these. However when you start from scratch, you will develop your screens with the Qt4-designer and display them by the caQtDM utility, which takes care of the data acquisition/control and the display. The conventions for the widgets and channels are fully compatible with MEDM and some other widgets have been added. The MEDM manual will give you normally all the necessary explanations for the different widgets while the mechanisms are the same. However you will have to get accustomed with the Qt4-designer utility and a quick look at its manual delivered with it, should give you an idea.
 
 # Build / Install / Run
+
+## Ubuntu 22
+apt-get install -y libgif-dev libpng-dev libz-dev libmotif-dev libx11-dev libxmu-dev libxtst-dev qtbase5-dev qt5-qmake libqwt-qt5-dev libqt5x11extras5-dev \
+libqt5svg5-dev qttools5-dev
 
 ## Linux
 For building and installing caqtdm following requirements have to met:
