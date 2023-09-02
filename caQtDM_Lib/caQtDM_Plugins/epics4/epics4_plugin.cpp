@@ -1056,13 +1056,13 @@ void PVAInterface::gotDisplayControl(PVStructurePtr const & pvStructure)
                 kData.edata.accessW = 0;
             }
             break;
-        case read:
+        case epics::pvAccess::read:
             {
                 kData.edata.accessR = 1;
                 kData.edata.accessW = 0;
             }
             break;
-        case readWrite:
+        case epics::pvAccess::readWrite:
             {
                 kData.edata.accessR = 1;
                 kData.edata.accessW = 1;
